@@ -223,7 +223,15 @@ const ContainerAligner = styled.div`
 	display: flex;
 	justify-content: center;
 	align-self: flex-start;
+`
 
+const lazyAppear = keyframes`
+    0% {
+        height: 2vh;
+    }
+    100% {
+        height: 80vh;
+    }
 `
 
 const GlassCard = styled.div`
@@ -243,6 +251,7 @@ const GlassCard = styled.div`
 	backdrop-filter: blur(4px);
 	transform-style: preserve-3d;
 	transform-origin: left right;
+    animation: ${lazyAppear} 1s forwards;
 `
 
 const Description = styled.p`
