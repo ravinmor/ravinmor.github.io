@@ -1,16 +1,16 @@
 import styled from "styled-components";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
+import { useEffect, useState } from "react/cjs/react.development";
+
 import { Earth } from "./components/earth";
 import { TopSection } from "./components/topSection";
 import { PreLoader } from "./components/preLoader";
-import { useEffect, useState } from "react/cjs/react.development";
 
 const CanvasContainer = styled.div`
   width: 100%;
   height: 100%;
 `;
-
 
 function App() {    
 	const [ removePreloader, setRemovePreloader ] = useState(false)
