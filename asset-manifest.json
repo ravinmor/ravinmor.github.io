@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.2cadeb80.chunk.css",
-    "main.js": "/static/js/main.6b89243c.chunk.js",
-    "main.js.map": "/static/js/main.6b89243c.chunk.js.map",
+    "main.js": "/static/js/main.af3c1b5a.chunk.js",
+    "main.js.map": "/static/js/main.af3c1b5a.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.23a5d212.js",
     "runtime-main.js.map": "/static/js/runtime-main.23a5d212.js.map",
-    "static/js/2.c26c5c25.chunk.js": "/static/js/2.c26c5c25.chunk.js",
-    "static/js/2.c26c5c25.chunk.js.map": "/static/js/2.c26c5c25.chunk.js.map",
+    "static/js/2.5d410642.chunk.js": "/static/js/2.5d410642.chunk.js",
+    "static/js/2.5d410642.chunk.js.map": "/static/js/2.5d410642.chunk.js.map",
     "index.html": "/index.html",
     "static/css/main.2cadeb80.chunk.css.map": "/static/css/main.2cadeb80.chunk.css.map",
-    "static/js/2.c26c5c25.chunk.js.LICENSE.txt": "/static/js/2.c26c5c25.chunk.js.LICENSE.txt",
+    "static/js/2.5d410642.chunk.js.LICENSE.txt": "/static/js/2.5d410642.chunk.js.LICENSE.txt",
     "static/media/8k_earth_clouds.08fcd800.jpg": "/static/media/8k_earth_clouds.08fcd800.jpg",
     "static/media/8k_earth_daymap.54672c1f.jpg": "/static/media/8k_earth_daymap.54672c1f.jpg",
     "static/media/8k_earth_normal_map.930cf2e9.jpg": "/static/media/8k_earth_normal_map.930cf2e9.jpg",
@@ -21,8 +21,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.23a5d212.js",
-    "static/js/2.c26c5c25.chunk.js",
+    "static/js/2.5d410642.chunk.js",
     "static/css/main.2cadeb80.chunk.css",
-    "static/js/main.6b89243c.chunk.js"
+    "static/js/main.af3c1b5a.chunk.js"
   ]
 }
