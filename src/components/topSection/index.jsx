@@ -1,10 +1,10 @@
-import React from "react";
-import { useRef, useState } from "react/cjs/react.development";
+import { useRef, useState } from "react";
 import styled, { keyframes } from "styled-components";
+import Tilt from 'react-vanilla-tilt'
+
 import { About } from "../about/index";
 import { Projects } from "../projects/index";
 import { Contacts } from "../contacts/index";
-import Tilt from 'react-vanilla-tilt'
 import { Skills } from "../skills";
 import FontStyles from "../globalStyles";
 

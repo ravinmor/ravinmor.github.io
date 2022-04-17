@@ -1,7 +1,8 @@
-import { GlitchedTitle } from "../glitchedTitle";
 import styled from 'styled-components'
+import { useRef, useState } from "react";
+
+import { GlitchedTitle } from "../glitchedTitle";
 import { RetroDiv } from "../retroDiv";
-import { useRef, useState } from "react/cjs/react.development";
 import { GymbrohMobileContent } from "../gymbrohMobileContent";
 import { GymbrohBackendContent } from "../gymbrohBackendContent";
 import { SkyWatcherContent } from "../skyWatcherContent";

@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { Canvas } from "@react-three/fiber";
-import { Suspense } from "react";
-import { useEffect, useState } from "react/cjs/react.development";
+import { Suspense, useEffect, useState } from "react";
 
 import { Earth } from "./components/earth";
 import { TopSection } from "./components/topSection";
