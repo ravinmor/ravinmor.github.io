@@ -4,8 +4,11 @@ import { ProjectTitle } from '../projectTitle'
 
 const GymbrohMobileContentContainer = styled.div`
     display: grid;
-    width: 100%;
     grid-template-rows: 1fr 6fr;
+    grid-template-columns: 1fr;
+
+    margin: auto;
+    
     grid-gap: 10px;
 `
 

@@ -11,13 +11,22 @@ import { AlexiaWebCrawler } from "../AlexiaWebCrawler";
 
 const ContainerAbout = styled.div`
 	display: flex;
+	justify-content: center;
+	align-items: center;
 	flex-direction: column;
+	
+
 	width: 100%;
 `
 
 const ProjectsField = styled.div`
 	display: grid;
 	grid-template-columns: 1fr 2fr;
+	grid-gap: 0.4rem;
+
+	margin: auto;
+
+	width: 100%;
 `
 
 const ProjectsOptionsField = styled.div`
@@ -28,19 +37,25 @@ const ProjectsOptionsField = styled.div`
 
 const ProjectItem = styled.div`
 	display: flex;
-	justify-content: flex-start;
+	justify-content: space-between;
 	text-align: flex-start;
-	font-size: .8vw;
-	letter-spacing: 2px;
-	color: #ffffffcc;
-	font-family: 'Retro';
-	text-transform: uppercase;
+
 	width: 10vw;
+	min-width: 90px;
 	height: 10vh;
-	margin: auto;
-	margin-top: 2px;
-	margin-bottom: 2px;
+	margin-top: 2%;
+	margin-bottom: 2%;
 	padding: 5px;
+
+	font-family: 'Retro';
+	font-size: 60%;
+	letter-spacing: 2px;
+
+	color: #ffffffcc;
+	text-transform: uppercase;
+	white-space: normal;
+
+
 	border: 3px solid #007337;
 
 	&:hover {
@@ -50,7 +65,10 @@ const ProjectItem = styled.div`
 	}
 `
 
-const ProjectsContentField = styled.div``
+const ProjectsContentField = styled.div`
+	height: 99%;
+	width: 100%;
+`
 
 const screens = {
 	'gymbrohMobileContent': () => <GymbrohMobileContent />,
@@ -94,7 +112,7 @@ export function Projects() {
 					<ProjectsOptionsField ref={projectsField}>
 						<ProjectItem onClick={(e) => {changeProjectView('gymbrohMobileContent', e)}}>Gymbroh Mobile</ProjectItem>
 						<ProjectItem onClick={(e) => {changeProjectView('gymbrohBackendContent', e)}}>Gymbroh Backend</ProjectItem>
-						<ProjectItem onClick={(e) => {changeProjectView('skyWatcherContent', e)}}>Skywatcher</ProjectItem>
+						<ProjectItem onClick={(e) => {changeProjectView('skyWatcherContent', e)}}>Sky watcher</ProjectItem>
 						<ProjectItem onClick={(e) => {changeProjectView('myWebsite', e)}}>My Website</ProjectItem>
 						<ProjectItem onClick={(e) => {changeProjectView('alexiaWebCrawler', e)}}>Alexia Web Crawler</ProjectItem>
 					</ProjectsOptionsField>

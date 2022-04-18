@@ -3,8 +3,8 @@ import styled from 'styled-components'
 const retroList = {
     List: styled.ul`
         display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
+        justify-content: center;
+        align-items: center;
         list-style: none;
         flex-direction: column;
     `,
@@ -19,7 +19,7 @@ const retroList = {
         padding: 4px;
         justify-content: space-between;
         flex-direction: row;
-        font-size: 22px;
+        font-size: 2rem;
         text-transform: uppercase;
         font-family: 'Retro';
         color: #007337;

@@ -3,21 +3,26 @@ import styled, { keyframes } from 'styled-components'
 const ProjectLinkContainer = styled.div`
     display: flex;
     justify-content: center;
-    width: 100%;
     flex-direction: column;
-`
+    overflow: hidden;
+
+    width: 96%;
+    height: 40vh;
+` 
 
 const ProjectDescription = styled.div`
     display: flex;
     justify-content: flex-start;
 
+    height: 33.4%;
+    
     font-family: 'Retro';
-    font-size: .6vw;
+    font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 100;
     color: #ffffffcc;
-    line-height: 14px;
+    line-height: 1rem;
 
     margin: 0px 5px 10px 5px;
     padding: 0;
@@ -27,17 +32,24 @@ const LinkField = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
     width: 100%;
-    height: 100%;
-    border: 3px solid #ffffffcc;
+    height: 66.6%;
+
+    border: 0.3rem solid #ffffffcc;
 `
 
 const Link = styled.div`
-    color: #000000cc;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 90%;
+    padding: 4.0rem 1px;
+    margin: auto;
+
     background-color: #007337;
-    width: 28vw;
-    padding: 40px 1px;
+    color: #000000cc;
 
     &:hover {
         background-color: #ffffffcc;
@@ -54,12 +66,14 @@ const blinker = keyframes`
 `
 
 const LinkText = styled.h6`
-    font-family: 'Retro';
-    font-size: 1.6vw;
-    text-transform: uppercase;
-    text-align: center;
     margin: 0;
     padding: 0;
+
+    font-family: 'Retro';
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    text-align: center;
+
     animation: ${blinker} .6s linear infinite;
 `
 

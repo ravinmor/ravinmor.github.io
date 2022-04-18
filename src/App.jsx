@@ -5,6 +5,7 @@ import { Suspense, useEffect, useState } from "react";
 import { Earth } from "./components/earth";
 import { TopSection } from "./components/topSection";
 import { PreLoader } from "./components/preLoader";
+import FontStyles from "./components/globalStyles";
 
 const CanvasContainer = styled.div`
   width: 100%;
@@ -23,6 +24,7 @@ function App() {
     return (
 		<>
 			{!removePreloader && <PreLoader />}
+			<FontStyles />
 			<CanvasContainer>
 				<TopSection />
 				<Canvas>

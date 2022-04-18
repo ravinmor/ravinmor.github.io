@@ -2,7 +2,10 @@ import styled, { keyframes } from "styled-components";
 
 const Container = styled.div`
 	display: flex;
-	padding: 10px;
+
+    width: 90%;
+	margin-top: 2.0rem;
+	margin-bottom: 2.0rem;
 `
 
 const glitchOne = keyframes`
@@ -138,52 +141,60 @@ const glitchTwo = keyframes`
 `
 
 const HeaderTitle = styled.h2`
-padding-top: 1;
-padding-bottom: 1;
-background-color: #ffffffe3;
-text-transform: uppercase;
-width: 190px;
-color: #000000dc;
-font-family: 'Retro', sans-serif;
-font-weight: 400;
-padding: 2px;
+    width: 19.0rem;
 
-&:before {
-    padding: 6px;
-    padding-left: 30px;
-    animation: ${glitchOne} 2s infinite reverse;
     color: #000000dc;
-    width: 200px;
-    content: '${props=>props.content}';
-    position: absolute;
-    overflow: hidden;
-    top: 2;
-    left: 3px;
-    background-color: #ffffffe3;
-    text-shadow: -2px;
-}
-&:after {
-    padding: 12px;
-    padding-left: 30px;
-    animation: ${glitchTwo} 2s linear infinite reverse;
-    color: #000000dc;
-    width: 200px;
-    content: '${props=>props.content}';
-    position: absolute;
-    overflow: hidden;
-    top: 0;
-    left: -3px;
-    background-color: #ffffffe3;
-    text-shadow: -2px 0 blue;
-}
-&:hover {
-    border: 1px solid #000000;
-    color: #ffffffe3;
-    text-transform: lowercase;
-    letter-spacing: 2px;
+    font-family: 'Retro';
     font-weight: 400;
-    background-color: #007337;
-}
+    background-color: #ffffffe3;
+    text-transform: uppercase;
+
+
+    &:before {
+        content: '${props=>props.content}';
+
+        position: absolute;
+        overflow: hidden;
+
+        width: 20.0rem;
+        top: 0.2rem;
+        left: 0.3rem;
+        padding: 0.6rem;
+        padding-left: 3.0rem;
+
+        background-color: #ffffffe3;
+        text-shadow: -2px;
+        color: #000000dc;
+
+        animation: ${glitchOne} 2s infinite reverse;
+    }
+    &:after {
+        content: '${props=>props.content}';
+
+        position: absolute;
+        overflow: hidden;
+
+        width: 20.0rem;
+        top: 0;
+        left: -0.3rem;
+        padding: 1.2rem;
+        padding-left: 3.0rem;
+
+        background-color: #ffffffe3;
+        color: #000000dc;
+        text-shadow: -2px 0 blue;
+
+        animation: ${glitchTwo} 2s linear infinite reverse;
+    }
+    &:hover {
+        text-transform: lowercase;
+        letter-spacing: 2px;
+        font-weight: 400;
+        
+        border: 1px solid #000000;
+        color: #ffffffe3;
+        background-color: #007337;
+    }
 `;
 
 export function GlitchedTitle(props) {

@@ -7,7 +7,10 @@ import { retroList } from '../retroList';
 
 const ContainerContacts = styled.div`
 	display: flex;
+	justify-content: center;
+	align-items: center;
 	flex-direction: column;
+
 	width: 100%;
 `
 
@@ -31,54 +34,64 @@ const EmailFieldline = styled.div`
 
 const EmailTitle = styled.h3`
 	font-family: 'Retro';
-	font-size: 12px;
+	font-size: 1.2rem;
 	margin: 4px;
 	color: #ffffffe2;
 `
 
 const InputField = styled.div`
 	display: flex;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
-	flex-direction: space-between;
+	flex-direction: row;
+	gap: 1rem;
+	margin: 1rem;
 	width: 100%;
+
+	@media (max-width: 833px) {
+		flex-direction: column;
+  	}
 `
 
 const RetroInput = styled.input.attrs((props) => ({
-	placeholder: props.contentPlaceholder
-  }))`
-  padding: 10px;
-  margin: 10px;
-  width: 280px;
-  background: #ffffffc1;
-  border: 3px solid #007337;
+		placeholder: props.contentPlaceholder
+	}))`
+	
+	padding: 10px;
+	width: 45%;
+	background: #ffffffc1;
+	border: 3px solid #007337;
 
-  ::placeholder,
-  ::-webkit-input-placeholder {
-	font-family: 'Retro';
-    color: #00000063;
-	font-size: 12px;
-	text-transform: uppercase;
-  }
+	::placeholder,
+	::-webkit-input-placeholder {
+		font-family: 'Retro';
+		color: #00000063;
+		font-size: 1.2rem;
+		text-transform: uppercase;
+	}
+  
+	@media (max-width: 833px) {
+  		width: 96%;
+	}
 `;
 
 const RetroInputTextArea = styled('textarea').attrs((props) => ({
-	placeholder: props.contentPlaceholder,
-	cols: props.colsNumber,
-	rows: props.rowsNumber
-  }))`
-  padding: 10px;
-  margin: 10px;
-  background: #ffffffc1;
-  border: 3px solid #007337;
+		placeholder: props.contentPlaceholder,
+		rows: props.rowsNumber
+}))`
+	padding: 1.0rem;
+	margin: 1.0rem;
+	width: 96%;
+	background: #ffffffc1;
+	border: 3px solid #007337;
 
-  ::placeholder,
-  ::-webkit-input-placeholder {
-	font-family: 'Retro';
-    color: #00000063;
-	font-size: 12px;
-	text-transform: uppercase;
-  }
+	::placeholder,
+	::-webkit-input-placeholder {
+		font-family: 'Retro';
+		color: #00000063;
+		font-size: 12px;
+		text-transform: uppercase;
+  	}
 `;
 
 const ButtonSendEmail = styled.button`
@@ -86,7 +99,7 @@ const ButtonSendEmail = styled.button`
 	color: #0000009d;
 	background: #007337;
 	margin: 10px;
-	padding: 15px 72px 15px 72px;
+	padding: 1.5rem 7.2rem 1.5rem 7.2rem;
 
 	&:hover {
 		color: #0000009d;
@@ -155,7 +168,6 @@ export function Contacts() {
 						</InputField>
 						<RetroInputTextArea
 							rowsNumber="6"
-							colsNumber="75"
 							contentPlaceholder='Message here'
 							value={body}
 							onChange={(c) => setBody(c.target.value)}

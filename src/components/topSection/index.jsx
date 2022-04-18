@@ -10,43 +10,63 @@ import FontStyles from "../globalStyles";
 
 const TopSectionContainer = styled.div`
 	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	background-color: #00000072;
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;
 	align-items: flex-end;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+	
+	background-color: #00000072;
 	z-index: 90;
+
+	@media (max-width: 728px) { 
+		flex-direction: column;
+  	}
 `;
 
 const Menu = styled.div`
 	position: relative;
-	margin: 30px 30px 100px 30px;
-	overflow: hidden;
 	display: flex;
-	justify-content: flex-start;
-	align-items: flex-start;
+	justify-content: center;
+	align-items: center;
 	flex-direction: column;
+	overflow: hidden;
+
+	width: 50%;
+	height: 100%;
+
+	@media (max-width: 728px) { 
+		width:100%;
+  	}
 `;
 
 const List = styled.ul`
 	display: flex;
-	justify-content: flex-start;
+	justify-content: flex-end;
 	align-items: flex-start;
-	list-style: none;
 	flex-direction: column;
-	width: 560px;
-	padding-left: 0px;
+
+	width: 90%;
+	height: 65%;
+
+	list-style: none;
+
     border-bottom: 2px solid #ffffffb5;
-	margin: 40px 20px 20px 20px;
+	
+	@media (max-width: 728px) { 
+		flex-direction: row;
+		height: 40%;
+		justify-content: space-around;
+  	}
 `
 
 const glitchOne = keyframes`
 	0% {
-    clip: rect(132px, auto, 101px, 30px);
+    	clip: rect(132px, auto, 101px, 30px);
 	}
 	5% {
 		clip: rect(17px, auto, 94px, 30px);
@@ -176,53 +196,136 @@ const glitchTwo = keyframes`
 	}
 `
 
+const blink = keyframes`
+	0% {
+		opacity: 100%;
+	}
+	75% {
+		opacity: 100%;
+	}
+	100% {
+		opacity: 0;
+	}
+`
+
 const ListItem = styled.li`
-	color: #ffffffb5;
-	text-decoration: none;
-	font-family: 'Poppins', sans-serif;
+	margin-top: 0.8rem;
+	margin-bottom: 0.8rem;
+	padding-left: 1.0rem;
+
 	font-weight: 500;
-	font-size: 16px;
-	margin-top: 8px;
-	margin-bottom: 8px;
-	padding-left: 10px;
+	font-size: 1.6rem;
+	text-decoration: none;
+
+	color: #ffffffb5;
+
 	transition: 0.6;
+	animation: ${blink} 0.34s infinite reverse;
 
 	&:before {
-		padding: 6px;
-		padding-left: 30px;
-		animation: ${glitchOne} ${props=>props.number}s infinite reverse;
-		color: #ffffffb5;
-		width: 40%;
 		content: '${props=>props.content}';
+
 		position: absolute;
 		overflow: hidden;
-		left: 4px;
+
+		width: 40%;
+		text-align: start;
+		left: 0.8rem;
+		padding: 0.5rem;
+		padding-left: 3.0rem;
+
+		color: #ffffffb5;
 		background: transparent;
 		text-shadow: -2px;
+
+		animation: ${glitchOne} ${props=>props.number}s infinite reverse;
 	}
 	&:after {
-		padding: 12px;
-		padding-left: 30px;
-  		animation: ${glitchTwo} ${props=>props.number}s linear infinite reverse;
-		color: #ffffffb5;
-		width: 20%;
-		height: 2%;
 		content: '${props=>props.content}';
+
 		position: absolute;
 		overflow: hidden;
-		left: -4px;
+
+		height: 4%;
+		left: 0.4rem;
+		padding: 1.2rem;
+		padding-left: 3.0rem;
+
 		background: transparent;
+		color: #ffffffb5;
 		text-shadow: -2px 0 blue;
+
+  		animation: ${glitchTwo} ${props=>props.number}s linear infinite reverse;
 	}
 	&:hover {
 		border-left: 6px solid #ffffffb5;
 	}
 `;
 
+const Description = styled.p`
+	width: 90%;
+	height: 5%;
+	
+	font-size: 1.4rem;
+	line-height: 3rem;
+	font-weight: 400;
+	text-decoration: none;
+
+	color: #ffffffb5;
+
+	&:before {
+		content: '${props=>props.content}';
+
+		position: absolute;
+		overflow: hidden;
+		
+		width: 100%;
+		left: 4px;
+		padding: 6px;
+		padding-left: 30px;
+
+		color: #ffffffb5;
+		text-shadow: -2px;
+		background: transparent;
+
+		animation: ${glitchOne} 2s infinite reverse;
+	}
+	&:after {
+		content: '${props=>props.content}';
+
+		position: absolute;
+		overflow: hidden;
+
+		width: 20%;
+		height: 2%;
+		padding: 1.2rem;
+		padding-left: 3.0rem;
+		left: -0.4rem;
+
+		color: #ffffffb5;
+		background: transparent;
+		text-shadow: -2px 0 blue;
+
+		animation: ${glitchTwo} 2s linear infinite reverse;
+	}
+
+	@media (max-width: 728px) { 
+		text-align: center;
+		height: 10%;
+  	}
+`
+
 const ContainerAligner = styled.div`
 	display: flex;
 	justify-content: center;
-	align-self: flex-start;
+	align-self: center;
+
+	width: 50%;
+	height: 100%;
+
+	@media (max-width: 728px) { 
+		width: 100%;
+  	}
 `
 
 const lazyAppear = keyframes`
@@ -236,15 +339,17 @@ const lazyAppear = keyframes`
 
 const GlassCard = styled.div`
 	position: relative;
-	width: 50vw;
-	height: 80vh;
-	margin: 30px;
-	overflow: hidden;
 	display: flex;
 	justify-content: flex-start;
 	align-items: flex-start;
-	box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+	overflow: hidden;
+
+	width: 46vw;
+	height: 80vh;
+	margin: 3.0rem;
+	
 	border-radius: 15px;
+	box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
 	background: rgba(255, 255, 255, 0.055);
 	border-top: 1px solid rgba(255, 255, 255, 0.2);
 	border-left: 1px solid rgba(255, 255, 255, 0.2);
@@ -252,49 +357,10 @@ const GlassCard = styled.div`
 	transform-style: preserve-3d;
 	transform-origin: left right;
     animation: ${lazyAppear} 1s forwards;
-`
-
-const Description = styled.p`
-	color: #ffffffb5;
-	text-decoration: none;
-	font-family: 'Poppins', sans-serif;
-	font-weight: 400;
-	height: 30px;
-	font-size: 14px;
-	margin-top: 0;
-	margin-bottom: 8px;
-	padding-left: 30px;
-
-	&:before {
-		padding: 6px;
-		padding-left: 30px;
-		animation: ${glitchOne} 2s infinite reverse;
-		color: #ffffffb5;
-		width: 100%;
-		content: '${props=>props.content}';
-		position: absolute;
-		overflow: hidden;
-		left: 4px;
-		background: transparent;
-		text-shadow: -2px;
-	}
-	&:after {
-		padding: 12px;
-		padding-left: 30px;
-		animation: ${glitchTwo} 2s linear infinite reverse;
-		color: #ffffffb5;
-		width: 20%;
-		height: 2%;
-		content: '${props=>props.content}';
-		position: absolute;
-		overflow: hidden;
-		left: -4px;
-		background: transparent;
-		text-shadow: -2px 0 blue;
-	}
-	&:hover {
-		border-left: 6px solid #ffffffb5;
-	}
+	
+	@media (max-width: 728px) {
+		width: 90vw;
+  	}
 `
 
 const screens = {
@@ -371,19 +437,20 @@ export function TopSection() {
 				</List>
 				<Description content={description}>{description}</Description>
 			</Menu>
-			{showGlassCard && (
-				<ContainerAligner>	
-					<Tilt style={{
-							background: '#0000000',
-							perspective: 1000
-						}}
-					>
-						<GlassCard ref={glassCardRef}>
-							{screen !== '' && screens[screen]()}
-						</GlassCard>
-					</Tilt>
-				</ContainerAligner>
-			)}
+			<ContainerAligner>	
+				{showGlassCard && (
+						<Tilt style={{
+								background: '#0000000',
+								boxShadow: 'none',
+								perspective: 1000,
+							}}
+						>
+							<GlassCard ref={glassCardRef}>
+								{screen !== '' && screens[screen]()}
+							</GlassCard>
+						</Tilt>
+				)}
+			</ContainerAligner>
 		</TopSectionContainer>
 	);
 }

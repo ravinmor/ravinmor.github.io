@@ -1,3 +1,10 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	outline: 0;
+}
+
 html,
 body,
 #root {
@@ -7,6 +14,36 @@ body,
     padding: 0;
 }
 
-#root {
-    background-color: #01040c;
+html {
+	/* A cada 1rem será considerada 10px */
+	font-size: 62.5%;
+}
+
+body {
+    background-color: #000000;
+
+	/* Feito isso o tamanho padrão da aplicação será 16px, o equivalente à 12pt no word */
+	font-size: 1.6rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* O media irá aplicar o seu conteúdo enquanto o viewport não ultrapassar o que foi especificado */
+@media (max-width: 1040px) {
+	html {
+		font-size: 56%;
+	}
+}
+
+@media (max-width: 768px) {
+	html {
+		font-size: 50%;
+	}
+}
+
+
+@media (max-width: 400px) {
+	html {
+		font-size: 40%;
+	}
 }

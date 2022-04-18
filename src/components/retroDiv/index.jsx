@@ -11,14 +11,16 @@ const lazyAppear = keyframes`
 
 const RetroDivContainer = styled.div`
     position: relative;
+    overflow: scroll;
+
     width: 90%;
-    height: 54vh;
+    height: 66vh;
+    padding: 1.0rem;
+    
     border: 2px solid #007337;
     border-top: 24px solid #007337;
-    padding: 10px;
-    margin: 20px;
-    overflow: scroll;
     backdrop-filter: blur(2px);
+
     animation: ${lazyAppear} 1s forwards;
 
     &::-webkit-scrollbar {
