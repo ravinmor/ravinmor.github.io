@@ -7,7 +7,7 @@ import { GymbrohMobileContent } from "../gymbrohMobileContent";
 import { GymbrohBackendContent } from "../gymbrohBackendContent";
 import { SkyWatcherContent } from "../skyWatcherContent";
 import { MyWebsiteContent } from "../myWebsiteContent";
-import { AlexiaWebCrawler } from "../AlexiaWebCrawler";
+import { GuerrilaMailAPI } from "../GuerrilaMailAPI";
 
 const ContainerAbout = styled.div`
 	display: flex;
@@ -75,7 +75,7 @@ const screens = {
 	'gymbrohBackendContent': () => <GymbrohBackendContent />,
 	'skyWatcherContent': () => <SkyWatcherContent />,
 	'myWebsite': () => <MyWebsiteContent />,
-	'alexiaWebCrawler': () => <AlexiaWebCrawler />,
+	'guerrilaMailApi': () => <GuerrilaMailAPI />,
 }
 
 export function Projects() {
@@ -114,7 +114,7 @@ export function Projects() {
 						<ProjectItem onClick={(e) => {changeProjectView('gymbrohBackendContent', e)}}>Gymbroh Backend</ProjectItem>
 						<ProjectItem onClick={(e) => {changeProjectView('skyWatcherContent', e)}}>Sky watcher</ProjectItem>
 						<ProjectItem onClick={(e) => {changeProjectView('myWebsite', e)}}>My Website</ProjectItem>
-						<ProjectItem onClick={(e) => {changeProjectView('alexiaWebCrawler', e)}}>Alexia Web Crawler</ProjectItem>
+						<ProjectItem onClick={(e) => {changeProjectView('guerrilaMailApi', e)}}>Alexia Web Crawler</ProjectItem>
 					</ProjectsOptionsField>
 					<ProjectsContentField>
 						{screen !== '' && screens[screen]()}

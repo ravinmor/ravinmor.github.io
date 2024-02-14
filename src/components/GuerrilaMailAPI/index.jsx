@@ -10,11 +10,11 @@ const MyWebsiteContainer = styled.div`
 `
 
 
-export function AlexiaWebCrawler() {
+export function GuerrilaMailAPI() {
 	return (
 		<MyWebsiteContainer>
-            <ProjectTitle title='Alexia Web Crawler' />
-            <ProjectLink link='https://github.com/ravinmor/Alexia-Web-crawler' description='Webcrawler able to extract data from all properties from a real estate called "Imobiliaria Figueiras"' />
+            <ProjectTitle title='Guerrilamail Node API' />
+            <ProjectLink link='https://github.com/ravinmor/guerrillamail-node-api' description='A nodejs api to interact with guerrilamail api.' />
         </MyWebsiteContainer>
 	)
 }
