@@ -3,9 +3,9 @@ import { useRef, useState } from "react";
 
 import { GlitchedTitle } from "../glitchedTitle";
 import { RetroDiv } from "../retroDiv";
-import { GymbrohMobileContent } from "../gymbrohMobileContent";
-import { GymbrohBackendContent } from "../gymbrohBackendContent";
-import { SkyWatcherContent } from "../skyWatcherContent";
+import { PhobosAiContent } from "../PhobosAIContent";
+import { DaffneContent } from "../DaffneContent";
+import { AlexandriaContent } from "../AlexandriaContent";
 import { MyWebsiteContent } from "../myWebsiteContent";
 import { GuerrilaMailAPI } from "../GuerrilaMailAPI";
 
@@ -71,9 +71,9 @@ const ProjectsContentField = styled.div`
 `
 
 const screens = {
-	'gymbrohMobileContent': () => <GymbrohMobileContent />,
-	'gymbrohBackendContent': () => <GymbrohBackendContent />,
-	'skyWatcherContent': () => <SkyWatcherContent />,
+	'phobosAIContent': () => <PhobosAiContent />,
+	'daffneContent': () => <DaffneContent />,
+	'alexandriaContent': () => <AlexandriaContent />,
 	'myWebsite': () => <MyWebsiteContent />,
 	'guerrilaMailApi': () => <GuerrilaMailAPI />,
 }
@@ -110,11 +110,11 @@ export function Projects() {
 			<RetroDiv>
 				<ProjectsField>
 					<ProjectsOptionsField ref={projectsField}>
-						<ProjectItem onClick={(e) => {changeProjectView('gymbrohMobileContent', e)}}>Gymbroh Mobile</ProjectItem>
-						<ProjectItem onClick={(e) => {changeProjectView('gymbrohBackendContent', e)}}>Gymbroh Backend</ProjectItem>
-						<ProjectItem onClick={(e) => {changeProjectView('skyWatcherContent', e)}}>Sky watcher</ProjectItem>
+						<ProjectItem onClick={(e) => {changeProjectView('phobosAIContent', e)}}>Phobos AI</ProjectItem>
+						<ProjectItem onClick={(e) => {changeProjectView('daffneContent', e)}}>Design - Daffne</ProjectItem>
+						<ProjectItem onClick={(e) => {changeProjectView('alexandriaContent', e)}}>Design - Alexandria</ProjectItem>
 						<ProjectItem onClick={(e) => {changeProjectView('myWebsite', e)}}>My Website</ProjectItem>
-						<ProjectItem onClick={(e) => {changeProjectView('guerrilaMailApi', e)}}>Alexia Web Crawler</ProjectItem>
+						<ProjectItem onClick={(e) => {changeProjectView('guerrilaMailApi', e)}}>Guerrila Mail Node API</ProjectItem>
 					</ProjectsOptionsField>
 					<ProjectsContentField>
 						{screen !== '' && screens[screen]()}
