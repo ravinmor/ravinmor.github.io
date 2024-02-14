@@ -16,4 +16,4 @@ This is an website made by me.
 </ul>
 
 ## Inspiration
-To make this site I was inspired by one of my favorite things... Movies from the 80s, more precisely the Alien saga. When you see my site will notice that I was inspired by the idea of a 'retro future' where you have high tech stuff but a retro interface. I tried to combine the modern with the old. 
+To make this site I was inspired by one of my favorite things... Movies from the 80s, more precisely the Alien saga. When you see my site will notice that I was inspired by the idea of a 'retro future' where you have high tech stuff but a retro interface. I try to combine the modern with the old.  
