@@ -122,6 +122,5 @@ export function Projects() {
 				</ProjectsField>
 			</RetroDiv>
 		</ContainerAbout>
-		
 	)
 }
