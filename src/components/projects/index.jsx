@@ -3,11 +3,14 @@ import { useRef, useState } from "react";
 
 import { GlitchedTitle } from "../glitchedTitle";
 import { RetroDiv } from "../retroDiv";
+import { RpgVttContent } from "../RpgVttContent";
+import { CaminhoDoSolNvl01Content } from "../CaminhoDoSolNvl01Content";
+import { CaminhoDoSolNvl02Content } from "../CaminhoDoSolNvl02Content";
+import { CaminhoDoSolNvl03Content } from "../CaminhoDoSolNvl03Content";
+import { PetTrackDesignContent } from "../PetTrackDesignContent";
 import { PhobosAiContent } from "../PhobosAIContent";
 import { DaffneContent } from "../DaffneContent";
-import { AlexandriaContent } from "../AlexandriaContent";
 import { MyWebsiteContent } from "../myWebsiteContent";
-import { GuerrilaMailAPI } from "../GuerrilaMailAPI";
 
 const ContainerAbout = styled.div`
 	display: flex;
@@ -71,11 +74,14 @@ const ProjectsContentField = styled.div`
 `
 
 const screens = {
+	'rpgVttContent': () => <RpgVttContent />,
+	'caminhoDoSolNvl01Content': () => <CaminhoDoSolNvl01Content />,
+	'caminhoDoSolNvl02Content': () => <CaminhoDoSolNvl02Content />,
+	'caminhoDoSolNvl03Content': () => <CaminhoDoSolNvl03Content />,
+	'petTrackDesignContent': () => <PetTrackDesignContent />,
 	'phobosAIContent': () => <PhobosAiContent />,
 	'daffneContent': () => <DaffneContent />,
-	'alexandriaContent': () => <AlexandriaContent />,
 	'myWebsite': () => <MyWebsiteContent />,
-	'guerrilaMailApi': () => <GuerrilaMailAPI />,
 }
 
 export function Projects() {
@@ -110,11 +116,14 @@ export function Projects() {
 			<RetroDiv>
 				<ProjectsField>
 					<ProjectsOptionsField ref={projectsField}>
+						<ProjectItem onClick={(e) => {changeProjectView('rpgVttContent', e)}}>RPG VTT</ProjectItem>
+						<ProjectItem onClick={(e) => {changeProjectView('caminhoDoSolNvl01Content', e)}}>Caminho do Sol LVL 01</ProjectItem>
+						<ProjectItem onClick={(e) => {changeProjectView('caminhoDoSolNvl02Content', e)}}>Caminho do Sol LVL 02</ProjectItem>
+						<ProjectItem onClick={(e) => {changeProjectView('caminhoDoSolNvl03Content', e)}}>Caminho do Sol LVL 03</ProjectItem>
 						<ProjectItem onClick={(e) => {changeProjectView('phobosAIContent', e)}}>Phobos AI</ProjectItem>
+						<ProjectItem onClick={(e) => {changeProjectView('petTrackDesignContent', e)}}>Design - Pet track</ProjectItem>
 						<ProjectItem onClick={(e) => {changeProjectView('daffneContent', e)}}>Design - Daffne</ProjectItem>
-						<ProjectItem onClick={(e) => {changeProjectView('alexandriaContent', e)}}>Design - Alexandria</ProjectItem>
 						<ProjectItem onClick={(e) => {changeProjectView('myWebsite', e)}}>My Website</ProjectItem>
-						<ProjectItem onClick={(e) => {changeProjectView('guerrilaMailApi', e)}}>Guerrila Mail Node API</ProjectItem>
 					</ProjectsOptionsField>
 					<ProjectsContentField>
 						{screen !== '' && screens[screen]()}
