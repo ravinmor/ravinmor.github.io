@@ -13,7 +13,7 @@ export function PetTrackDesignContent() {
 	return (
 		<PetTrackDesignContainer>
             <ProjectTitle title='pet-track-design' />
-            <ProjectLink link='https://www.caminho-do-sol.org/' description='A mobile application designed to track and manage pet vaccination records.' />
+            <ProjectLink link='https://www.figma.com/design/ap4jATPGehPS57pg23BS3U/Pet-Track?node-id=0-1&t=FpFkQepXvChYuE14-1' description='A mobile application designed to track and manage pet vaccination records.' />
         </PetTrackDesignContainer>
 	)
 }
