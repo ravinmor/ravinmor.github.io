@@ -2,6 +2,7 @@ import { GlitchedTitle } from "../glitchedTitle";
 import styled from 'styled-components'
 import { RetroDiv } from "../retroDiv";
 import { retroList } from '../../components/retroList'
+import { Bot, MousePointer2, Network, ScanFace, SearchCode, ShieldCheck } from 'lucide-react';
 
 const ContainerAbout = styled.div`
 	display: flex;
@@ -12,15 +13,17 @@ const ContainerAbout = styled.div`
 	width: 100%;
 `
 
-const EmptySkillIcon = styled.span`
-	width: 2.2rem;
-	margin: 0px 6px -4px 0px;
-`
-
 const SkillLabel = styled.span`
 	margin-left: auto;
 	text-align: right;
 `
+
+const skillIconStyle = {
+	width: '2.2rem',
+	height: '2.2rem',
+	margin: '0px 6px -4px 0px',
+	flexShrink: 0,
+}
 
 export function Skills() {
 	
@@ -116,32 +119,32 @@ export function Skills() {
 					</retroList.ListItem>
 					<retroList.ListItem>
 						<retroList.ListItemField>
-							<EmptySkillIcon /><SkillLabel>Front-end security and vulnerabilities</SkillLabel>
+							<ShieldCheck style={skillIconStyle} /><SkillLabel>Front-end security and vulnerabilities</SkillLabel>
 						</retroList.ListItemField>
 					</retroList.ListItem>
 					<retroList.ListItem>
 						<retroList.ListItemField>
-							<EmptySkillIcon /><SkillLabel>Crawlers</SkillLabel>
+							<SearchCode style={skillIconStyle} /><SkillLabel>Crawlers</SkillLabel>
 						</retroList.ListItemField>
 					</retroList.ListItem>
 					<retroList.ListItem>
 						<retroList.ListItemField>
-							<EmptySkillIcon /><SkillLabel>Non-human and inconsistent user behavior detection</SkillLabel>
+							<Bot style={skillIconStyle} /><SkillLabel>Non-human and inconsistent user behavior detection</SkillLabel>
 						</retroList.ListItemField>
 					</retroList.ListItem>
 					<retroList.ListItem>
 						<retroList.ListItemField>
-							<EmptySkillIcon /><SkillLabel>Human behavior simulation</SkillLabel>
+							<MousePointer2 style={skillIconStyle} /><SkillLabel>Human behavior simulation</SkillLabel>
 						</retroList.ListItemField>
 					</retroList.ListItem>
 					<retroList.ListItem>
 						<retroList.ListItemField>
-							<EmptySkillIcon /><SkillLabel>Human fingerprint recognition and spoofing</SkillLabel>
+							<ScanFace style={skillIconStyle} /><SkillLabel>Human fingerprint recognition and spoofing</SkillLabel>
 						</retroList.ListItemField>
 					</retroList.ListItem>
 					<retroList.ListItem>
 						<retroList.ListItemField>
-							<EmptySkillIcon /><SkillLabel>Proxies, VPN, multi-hop VPN and Tor bridges</SkillLabel>
+							<Network style={skillIconStyle} /><SkillLabel>Proxies, VPN, multi-hop VPN and Tor bridges</SkillLabel>
 						</retroList.ListItemField>
 					</retroList.ListItem>
 				</retroList.List>
