@@ -2,7 +2,7 @@ import { GlitchedTitle } from "../glitchedTitle";
 import styled from 'styled-components'
 import { RetroDiv } from "../retroDiv";
 import { retroList } from '../../components/retroList'
-import { Bot, MousePointer2, Network, ScanFace, SearchCode, ShieldCheck } from 'lucide-react';
+import { Bot, BriefcaseBusiness, MousePointer2, Network, ScanFace, SearchCode, ShieldCheck, Workflow } from 'lucide-react';
 
 const ContainerAbout = styled.div`
 	display: flex;
@@ -44,12 +44,12 @@ export function Skills() {
 					</retroList.ListItem>
 					<retroList.ListItem>
 						<retroList.ListItemField>
-							<i style={{fontSize: '2.2rem', margin: '0px 6px -4px 0px'}} className="devicon-azure-plain"></i>Dynamics 365
+							<BriefcaseBusiness style={skillIconStyle} />Dynamics 365
 						</retroList.ListItemField>
 					</retroList.ListItem>
 					<retroList.ListItem>
 						<retroList.ListItemField>
-							<i style={{fontSize: '2.2rem', margin: '0px 6px -4px 0px'}} className="devicon-azure-plain"></i>Power Platform
+							<Workflow style={skillIconStyle} />Power Platform
 						</retroList.ListItemField>
 					</retroList.ListItem>
 					<retroList.ListItem>
