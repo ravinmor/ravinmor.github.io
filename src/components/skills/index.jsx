@@ -12,6 +12,16 @@ const ContainerAbout = styled.div`
 	width: 100%;
 `
 
+const EmptySkillIcon = styled.span`
+	width: 2.2rem;
+	margin: 0px 6px -4px 0px;
+`
+
+const SkillLabel = styled.span`
+	margin-left: auto;
+	text-align: right;
+`
+
 export function Skills() {
 	
 	return (
@@ -27,6 +37,16 @@ export function Skills() {
 					<retroList.ListItem>
 						<retroList.ListItemField>
 							<i style={{fontSize: '2.2rem', margin: '0px 6px -4px 0px'}} className="devicon-typescript-plain"></i>Typescript
+						</retroList.ListItemField>
+					</retroList.ListItem>
+					<retroList.ListItem>
+						<retroList.ListItemField>
+							<i style={{fontSize: '2.2rem', margin: '0px 6px -4px 0px'}} className="devicon-azure-plain"></i>Dynamics 365
+						</retroList.ListItemField>
+					</retroList.ListItem>
+					<retroList.ListItem>
+						<retroList.ListItemField>
+							<i style={{fontSize: '2.2rem', margin: '0px 6px -4px 0px'}} className="devicon-azure-plain"></i>Power Platform
 						</retroList.ListItemField>
 					</retroList.ListItem>
 					<retroList.ListItem>
@@ -92,6 +112,36 @@ export function Skills() {
 					<retroList.ListItem>
 						<retroList.ListItemField>
 							<i style={{fontSize: '2.2rem', margin: '0px 6px -4px 0px'}} className="devicon-linux-plain"></i>Linux
+						</retroList.ListItemField>
+					</retroList.ListItem>
+					<retroList.ListItem>
+						<retroList.ListItemField>
+							<EmptySkillIcon /><SkillLabel>Front-end security and vulnerabilities</SkillLabel>
+						</retroList.ListItemField>
+					</retroList.ListItem>
+					<retroList.ListItem>
+						<retroList.ListItemField>
+							<EmptySkillIcon /><SkillLabel>Crawlers</SkillLabel>
+						</retroList.ListItemField>
+					</retroList.ListItem>
+					<retroList.ListItem>
+						<retroList.ListItemField>
+							<EmptySkillIcon /><SkillLabel>Non-human and inconsistent user behavior detection</SkillLabel>
+						</retroList.ListItemField>
+					</retroList.ListItem>
+					<retroList.ListItem>
+						<retroList.ListItemField>
+							<EmptySkillIcon /><SkillLabel>Human behavior simulation</SkillLabel>
+						</retroList.ListItemField>
+					</retroList.ListItem>
+					<retroList.ListItem>
+						<retroList.ListItemField>
+							<EmptySkillIcon /><SkillLabel>Human fingerprint recognition and spoofing</SkillLabel>
+						</retroList.ListItemField>
+					</retroList.ListItem>
+					<retroList.ListItem>
+						<retroList.ListItemField>
+							<EmptySkillIcon /><SkillLabel>Proxies, VPN, multi-hop VPN and Tor bridges</SkillLabel>
 						</retroList.ListItemField>
 					</retroList.ListItem>
 				</retroList.List>

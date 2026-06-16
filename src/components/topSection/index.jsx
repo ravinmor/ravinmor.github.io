@@ -233,7 +233,6 @@ const ListItem = styled.li`
 	text-decoration: none;
 
 	color: #ffffffb5;
-	border-left: ${props => props.$active ? '6px solid #ffffffb5' : '6px solid transparent'};
 	cursor: pointer;
 
 	transition: 0.6;
@@ -275,7 +274,6 @@ const ListItem = styled.li`
   		animation: ${glitchTwo} ${props=>props.number}s linear infinite reverse;
 	}
 	&:hover {
-		border-left: 6px solid #ffffffb5;
 	}
 
 	@media (max-width: 728px) {
@@ -291,9 +289,9 @@ const ListItem = styled.li`
 		text-align: center;
 		white-space: nowrap;
 
-		background: ${props => props.$active ? '#ffffff1a' : '#00000066'};
-		border: 1px solid #ffffff5e;
-		border-bottom: ${props => props.$active ? '4px solid #ffffffcc' : '1px solid #ffffff5e'};
+		background: #00000066;
+		border: 0;
+		border-bottom: ${props => props.$active ? '4px solid #ffffffcc' : '1px solid transparent'};
 		animation: none;
 		overflow: hidden;
 		touch-action: manipulation;
@@ -304,7 +302,6 @@ const ListItem = styled.li`
 		}
 
 		&:hover {
-			border-left: 1px solid #ffffff5e;
 			border-bottom: 4px solid #ffffffcc;
 		}
   	}
