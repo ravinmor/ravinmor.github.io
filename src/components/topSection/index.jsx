@@ -25,6 +25,8 @@ const TopSectionContainer = styled.div`
 
 	@media (max-width: 728px) { 
 		flex-direction: column;
+		justify-content: flex-start;
+		align-items: stretch;
   	}
 `;
 
@@ -40,7 +42,12 @@ const Menu = styled.div`
 	height: 100%;
 
 	@media (max-width: 728px) { 
-		width:100%;
+		width: 100%;
+		height: auto;
+		min-height: 10.5rem;
+		flex-shrink: 0;
+		justify-content: flex-start;
+		padding: 1.2rem 1.4rem 0;
   	}
 `;
 
@@ -59,8 +66,12 @@ const List = styled.ul`
 	
 	@media (max-width: 728px) { 
 		flex-direction: row;
-		height: 40%;
-		justify-content: space-around;
+		width: 100%;
+		height: auto;
+		justify-content: space-between;
+		align-items: stretch;
+		gap: 0.8rem;
+		padding-bottom: 0.8rem;
   	}
 `
 
@@ -209,6 +220,10 @@ const blink = keyframes`
 `
 
 const ListItem = styled.li`
+	position: relative;
+	display: flex;
+	align-items: center;
+
 	margin-top: 0.8rem;
 	margin-bottom: 0.8rem;
 	padding-left: 1.0rem;
@@ -218,6 +233,8 @@ const ListItem = styled.li`
 	text-decoration: none;
 
 	color: #ffffffb5;
+	border-left: ${props => props.$active ? '6px solid #ffffffb5' : '6px solid transparent'};
+	cursor: pointer;
 
 	transition: 0.6;
 	animation: ${blink} 0.34s infinite reverse;
@@ -260,6 +277,37 @@ const ListItem = styled.li`
 	&:hover {
 		border-left: 6px solid #ffffffb5;
 	}
+
+	@media (max-width: 728px) {
+		justify-content: center;
+		flex: 1 1 0;
+		min-width: 0;
+		height: 4.8rem;
+		margin: 0;
+		padding: 0 0.4rem;
+
+		font-size: 1.45rem;
+		line-height: 1;
+		text-align: center;
+		white-space: nowrap;
+
+		background: ${props => props.$active ? '#ffffff1a' : '#00000066'};
+		border: 1px solid #ffffff5e;
+		border-bottom: ${props => props.$active ? '4px solid #ffffffcc' : '1px solid #ffffff5e'};
+		animation: none;
+		overflow: hidden;
+		touch-action: manipulation;
+
+		&:before,
+		&:after {
+			display: none;
+		}
+
+		&:hover {
+			border-left: 1px solid #ffffff5e;
+			border-bottom: 4px solid #ffffffcc;
+		}
+  	}
 `;
 
 const Description = styled.p`
@@ -311,7 +359,17 @@ const Description = styled.p`
 
 	@media (max-width: 728px) { 
 		text-align: center;
-		height: 10%;
+		width: 100%;
+		height: 3.2rem;
+		min-height: 3.2rem;
+		line-height: 2rem;
+		padding: 0.3rem 0.6rem;
+		overflow: hidden;
+
+		&:before,
+		&:after {
+			display: none;
+		}
   	}
 `
 
@@ -325,6 +383,10 @@ const ContainerAligner = styled.div`
 
 	@media (max-width: 728px) { 
 		width: 100%;
+		height: auto;
+		flex: 1 1 auto;
+		min-height: 0;
+		align-items: flex-start;
   	}
 `
 
@@ -360,8 +422,38 @@ const GlassCard = styled.div`
 	
 	@media (max-width: 728px) {
 		width: 90vw;
+		height: calc(100dvh - 14rem);
+		min-height: 0;
+		margin: 1.2rem;
   	}
 `
+
+const menuItems = [
+	{
+		id: 'about',
+		label: 'About',
+		description: 'A couple of informations to know Ravin Mor',
+		number: 2,
+	},
+	{
+		id: 'projects',
+		label: 'Projects',
+		description: 'Some projects made to learn or just to do some cool stuff',
+		number: 3,
+	},
+	{
+		id: 'skills',
+		label: 'Skills',
+		description: 'All my techs Skills',
+		number: 1,
+	},
+	{
+		id: 'contacts',
+		label: 'Contacts',
+		description: 'All ways you have to contact Ravin Mor',
+		number: 1,
+	},
+]
 
 const screens = {
 	'about': () => <About />,
@@ -378,8 +470,9 @@ export function TopSection() {
 
 	const glassCardRef = useRef();
 
-	function changeGlassCardContent(screen) {
+	function changeGlassCardContent(screen, description) {
 		setShowGlassCard(true);
+		setDescription(description);
 		if(isFirstClick) {
 			setIsFirsClick(false)
 		} else {
@@ -398,42 +491,19 @@ export function TopSection() {
 			<FontStyles />
 			<Menu>
 				<List>
-					<ListItem 
-						onMouseOver={() => setDescription('A couple of informations to know Ravin Mor')}
-						onMouseLeave={() => setDescription('')}
-						onClick={() => {changeGlassCardContent('about')}}
-						number={2}
-						content="About"
-					>
-						About
-					</ListItem>
-					<ListItem 
-						onMouseOver={() => setDescription('Some projects made to learn or just to do some cool stuff')}
-						onMouseLeave={() => setDescription('')}
-						onClick={() => {changeGlassCardContent('projects')}}
-						number={3}
-						content="Projects"
-					>
-						Projects
-					</ListItem>
-					<ListItem 
-						onMouseOver={() => setDescription('All my techs Skills')}
-						onMouseLeave={() => setDescription('')}
-						onClick={() => {changeGlassCardContent('skills')}}
-						number={1}
-						content="Skills"
-					>
-						Skills
-					</ListItem>
-					<ListItem 
-						onMouseOver={() => setDescription('All ways you have to contact Ravin Mor')}
-						onMouseLeave={() => setDescription('')}
-						onClick={() => { changeGlassCardContent('contacts')}}
-						number={1}
-						content="Contacts"
-					>
-						Contacts
-					</ListItem>
+					{menuItems.map((item) => (
+						<ListItem
+							key={item.id}
+							onMouseOver={() => setDescription(item.description)}
+							onMouseLeave={() => !screen && setDescription('')}
+							onClick={() => {changeGlassCardContent(item.id, item.description)}}
+							number={item.number}
+							content={item.label}
+							$active={screen === item.id}
+						>
+							{item.label}
+						</ListItem>
+					))}
 				</List>
 				<Description content={description}>{description}</Description>
 			</Menu>
